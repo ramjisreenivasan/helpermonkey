@@ -1,0 +1,90 @@
+<SOAP_Domain_Msg
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<Context operation="GetPointsUsage" operationType="GATEWAY"
+		portType="" portTypeNamespace="" port=""
+		service="ComIbmBrokerGenericGatewayService" fileName="">
+		<SOAP_Version>1.1</SOAP_Version>
+		<Namespace
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" />
+	</Context>
+	<Header>
+		<MessageMetaDataResponse
+			xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/"
+			GTID="01443e13-b6f1-4d95-a596-3198b334b093" locale="" cacheId=""
+			cacheControl="">
+			<fields>
+				<field name="Verbose">
+					<value />
+				</field>
+			</fields>
+		</MessageMetaDataResponse>
+	</Header>
+	<Body>
+		<GetPointsUsageResponse
+			xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/">
+			<CustomerId>10549937</CustomerId>
+			<InventoryLastYearUsageList>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*10*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*11*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*12*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*13*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*14*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*15*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*16*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*17*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*18*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*19*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*20*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+				<InventoryLastYearUsage>
+					<InventoryId>MP*X794*21*B</InventoryId>
+					<HasUsage>false</HasUsage>
+					<LastUsageYear>0</LastUsageYear>
+				</InventoryLastYearUsage>
+			</InventoryLastYearUsageList>
+		</GetPointsUsageResponse>
+	</Body>
+</SOAP_Domain_Msg>

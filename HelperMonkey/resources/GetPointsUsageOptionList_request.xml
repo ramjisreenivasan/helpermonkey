@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <MessageMetaData xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/"/>
+  </soap:Header>
+  <soap:Body>
+    <GetPointsUsageOptionList xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/">
+      <SystemDataKeyList>
+        <systemDataKey systemId="110" value="8285"/>
+      </SystemDataKeyList>
+      <MessageMetaData GTID="4bd42173-8a09-4581-9d6e-81e2cefa5b0c" locale="" cacheId="" cacheControl="">
+        <fields>
+          <field id="" name="" valueType="">
+            <value/>
+          </field>
+        </fields>
+      </MessageMetaData>
+    </GetPointsUsageOptionList>
+  </soap:Body>
+</soap:Envelope>

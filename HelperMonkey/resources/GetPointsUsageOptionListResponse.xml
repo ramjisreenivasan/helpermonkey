@@ -1,0 +1,219 @@
+  <soap:Header>
+    <MessageMetaDataResponse xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/" GTID="" locale="">
+      <fields>
+        <field>
+          <value/>
+        </field>
+      </fields>
+    </MessageMetaDataResponse>
+  </soap:Header>
+  <soap:Body>
+    <GetPointsUsageRestrictionListResponse xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/">
+      <RestrictionList>
+        <restriction>
+          <usageYear id="10175769" startDate="2017-01-01T12:00:00.000-05:00" endDate="2019-01-01T12:00:00.000-05:00" year="2017" soldInventoryId="77702">
+            <usageType id="2" type="Banked Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    Banked Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="33501694" startDate="2019-01-01T12:00:00.000-05:00" endDate="2019-12-31T12:00:00.000-05:00" year="2019" soldInventoryId="77702">
+            <usageType id="5" type="MR Points Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    MR Points Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+            <restrictionDetail id="0" message="UsageType not allowed for reservations." name="UsageType Allowed For Reservations"/>
+            <restrictionDetail id="0" message="Usage Type not in available list for Reservation Sub Type" name="Usage Type"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="33501695" startDate="2020-01-01T12:00:00.000-05:00" endDate="2020-12-31T12:00:00.000-05:00" year="2020" soldInventoryId="77702">
+            <usageType id="5" type="MR Points Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    MR Points Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="UsageType not allowed for reservations." name="UsageType Allowed For Reservations"/>
+            <restrictionDetail id="0" message="Usage Type not in available list for Reservation Sub Type" name="Usage Type"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="385677" startDate="2014-01-01T12:00:00.000-05:00" endDate="2014-12-31T12:00:00.000-05:00" year="2014" soldInventoryId="77702">
+            <usageType id="6" type="Annual Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="715448" startDate="2015-01-01T12:00:00.000-05:00" endDate="2015-12-31T12:00:00.000-05:00" year="2015" soldInventoryId="77702">
+            <usageType id="6" type="Annual Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="12177475" startDate="2019-01-01T12:00:00.000-05:00" endDate="2019-12-31T12:00:00.000-05:00" year="2019" soldInventoryId="77702">
+            <usageType id="6" type="Annual Trust">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Trust
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Trust
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="17672336" startDate="2019-01-01T12:00:00.000-05:00" endDate="2019-12-31T12:00:00.000-05:00" year="2019" soldInventoryId="84281">
+            <usageType id="13" type="Annual Election">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Election
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Exchange
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="17621012" startDate="2018-01-01T12:00:00.000-05:00" endDate="2018-12-31T12:00:00.000-05:00" year="2018" soldInventoryId="84282">
+            <usageType id="13" type="Annual Election">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Election
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Exchange
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+        <restriction>
+          <usageYear id="34332833" startDate="2019-01-01T12:00:00.000-05:00" endDate="2019-12-31T12:00:00.000-05:00" year="2019" soldInventoryId="84282">
+            <usageType id="13" type="Annual Election">
+              <descriptionList>
+                <description>
+                  <text>
+                    Annual Election
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Exchange
+              </pointClassification>
+            </usageType>
+          </usageYear>
+          <restrictionDetailList>
+            <restrictionDetail id="0" message="Reservation is not in the date range of the Usage Year." name="Reservation Part of UsageYear Date Range"/>
+          </restrictionDetailList>
+        </restriction>
+      </RestrictionList>
+      <MessageMetaData GTID="785cecbd-401a-41ce-9558-09a45ee7fcbb" locale="">
+        <fields>
+          <field>
+            <value/>
+          </field>
+        </fields>
+      </MessageMetaData>
+      <UsageApplyList>
+        <usageApply>
+          <daysApplied>
+            0
+          </daysApplied>
+          <pointsApplied value="425.0"/>
+          <usageYear id="33821494" startDate="2019-01-01T12:00:00.000-05:00" endDate="2020-12-31T12:00:00.000-05:00" year="2019" soldInventoryId="84282">
+            <usageType id="10" type="Banked Election">
+              <descriptionList>
+                <description>
+                  <text>
+                    Banked Election
+                  </text>
+                </description>
+              </descriptionList>
+              <pointClassification>
+                Exchange
+              </pointClassification>
+            </usageType>
+          </usageYear>
+        </usageApply>
+      </UsageApplyList>
+    </GetPointsUsageRestrictionListResponse>
+  </soap:Body>
+</soap:Envelope>

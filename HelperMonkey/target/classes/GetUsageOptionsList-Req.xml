@@ -1,0 +1,35 @@
+<SOAP_Domain_Msg
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<Context operation="GetPointsUsageOptionList"
+		operationType="REQUEST_RESPONSE"
+		portType="MVCI_MVCPReservationPortType_v1"
+		portTypeNamespace="http://mvci.marriott.com/mvcpreservation/ws/v1/"
+		port="MVCI_MVCPReservationPort_v1"
+		service="MVCI_MVCPReservationService_v1"
+		fileName="wsdl/MVCPReservation.wsdl">
+		<SOAP_Version>1.1</SOAP_Version>
+		<Namespace
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" />
+	</Context>
+	<Header>
+		<MessageMetaData
+			xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/" />
+	</Header>
+	<Body>
+		<GetPointsUsageOptionList
+			xmlns="http://mvci.marriott.com/mvcpreservation/service/v1/">
+			<SystemDataKeyList>
+				<systemDataKey systemId="110" value="1496706" />
+			</SystemDataKeyList>
+			<MessageMetaData
+				GTID="4bd42173-8a09-4581-9d6e-81e2cefa5b0c" locale="" cacheId=""
+				cacheControl="">
+				<fields>
+					<field id="" name="" valueType="">
+						<value />
+					</field>
+				</fields>
+			</MessageMetaData>
+		</GetPointsUsageOptionList>
+	</Body>
+</SOAP_Domain_Msg>

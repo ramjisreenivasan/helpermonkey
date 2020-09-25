@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Header>
+		<svc:MessageMetaData
+			xmlns:svc="http://mvci.marriott.com/mvcpreservation/service/v1/"
+			GTID="01443e13-b6f1-4d95-a596-3198b334b093" locale="" cacheId=""
+			cacheControl="">
+			<svc:fields>
+				<svc:field name="Verbose">
+					<svc:value />
+				</svc:field>
+			</svc:fields>
+		</svc:MessageMetaData>
+	</soap:Header>
+	<soap:Body>
+		<svc:GetPointsUsage
+			xmlns:svc="http://mvci.marriott.com/mvcpreservation/service/v1/">
+			<svc:CustomerId>10549937</svc:CustomerId>
+			<svc:InventoryList>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*10*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*11*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*12*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*13*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*14*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*15*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*16*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*17*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*18*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*19*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*20*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+				<svc:Inventory>
+					<svc:InventoryID>MP*X794*21*B</svc:InventoryID>
+					<svc:TswContractId>714837</svc:TswContractId>
+				</svc:Inventory>
+			</svc:InventoryList>
+		</svc:GetPointsUsage>
+	</soap:Body>
+</soap:Envelope>
