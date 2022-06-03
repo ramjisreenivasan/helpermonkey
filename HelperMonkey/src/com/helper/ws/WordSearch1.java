@@ -40,6 +40,7 @@ import com.helper.ws.model.HardGC;
 import com.helper.ws.model.MediumGC;
 import com.helper.ws.model.MediumTamilGC;
 import com.helper.ws.model.TestGC;
+import com.helper.ws.model.WordLetter;
 import com.helper.ws.orient.OrientFactory;
 
 class WSLabel extends JLabel {
@@ -133,6 +134,8 @@ public class WordSearch1  {
 	public int GRID_DIFFICULTY;
 	public int ITER_CHECKSPACE;
 	
+	public static int GRID_ID;
+	
 	public GridConfig currGC;
 	
 	public static String[][] WORDS;
@@ -167,6 +170,7 @@ public class WordSearch1  {
 		//ws1.populateConfigs(new HardGC());
 		
 		String[][] listWords = WORDS;
+		GRID_ID = 100000 + (int)(100 * Math.random());
 		
 		// Initialize the grid
 		initGrid();
@@ -192,8 +196,10 @@ public class WordSearch1  {
 		
 		populateGrid(gwList);
 		
+		printWords(listWords);
+
 		// Populate the remaining places
-		//populateRest();
+		populateRest();
 		
 		System.out.println();
 		System.out.println();
@@ -260,18 +266,51 @@ public class WordSearch1  {
 		}
 	}	
 	
+	public void printWords(String[][] listWords) {
+		System.out.println();
+		System.out.println();
+		System.out.println("GRID: " + GRID_ID);
+		Arrays.asList(listWords).stream().forEachOrdered((word) -> {
+			Arrays.asList(word).stream().forEachOrdered((letter -> {
+				System.out.print(letter);
+			}));
+			System.out.print(", ");
+		});
+		System.out.println();
+		System.out.println();
+	}
+	
 	public void populateGrid(List<GridWord> listWords) {
 		listWords.forEach(gw -> {
 			populateWord(gw, false, false);
 		});
+		
+		printGrid4();
 
 		//Populate jumbled words
 		listWords.forEach(gw -> {
-			GridWord gw1 = new GridWord(getFalseWord(gw.word), GridValidity.JUMBLED);
+			GridWord gw1 = new GridWord(getFalseWord(gw.word.clone()), GridValidity.JUMBLED);
 			populateWord(gw1, true, false);
 			gw.falseWords.add(gw1);
 			gw.countMisspelled++;
 		});
+
+		//Populate fragments words
+		listWords.forEach(gw -> {
+			IntStream.iterate(0, i -> i + 1).limit(2).forEach(i -> {
+				// Populate FRAGMENTED word
+				String[] frag1 = new String[gw.word.length-1]; //.substring(0, gw.word.length() - 1);
+				for(int idx=0; idx<gw.word.length-1; idx++) {
+					frag1[idx] = gw.word[idx];
+				}
+				
+				GridWord gw2 = new GridWord(frag1, GridValidity.FRAGMENTED);
+				populateWord(gw2, true, true);
+				gw.countFragments++;
+				gw.falseWords.add(gw2);
+			});
+		});
+	
 	}
 	
 	public String[] getFalseWord(String[] word) {
@@ -297,7 +336,7 @@ public class WordSearch1  {
 	public void populateWord(GridWord gw, boolean nested, boolean allowReplacements) {
 			//GridWord gw = new GridWord(word);
 			//if(gw.isValid()) 
-			System.out.println("Populating :: " + printWord(gw.word) + " - nested: " + nested);
+			//System.out.println("Populating :: " + printWord(gw.word) + " - nested: " + nested);
 			int gridDiff = GRID_DIFFICULTY;
 			
 			findWordLocations(gw);
@@ -342,20 +381,20 @@ public class WordSearch1  {
 				orientFactory.get().getOrient(orient).populateGridWord(gw, gl.xCoord, gl.yCoord, allowReplacements);
 				//printGrid3();
 				
-				if (!nested) {
-					IntStream.iterate(0, i -> i + 1).limit(2).forEach(i -> {
-						// Populate FRAGMENTED word
-						String[] frag1 = new String[gw.word.length-1]; //.substring(0, gw.word.length() - 1);
-						for(int idx=0; idx<gw.word.length-1; idx++) {
-							frag1[idx] = gw.word[idx];
-						}
-						
-						GridWord gw2 = new GridWord(frag1, GridValidity.FRAGMENTED);
-						populateWord(gw2, true, allowReplacements);
-						gw.countFragments++;
-						gw.falseWords.add(gw2);
-					});
-				}
+//				if (!nested) {
+//					IntStream.iterate(0, i -> i + 1).limit(2).forEach(i -> {
+//						// Populate FRAGMENTED word
+//						String[] frag1 = new String[gw.word.length-1]; //.substring(0, gw.word.length() - 1);
+//						for(int idx=0; idx<gw.word.length-1; idx++) {
+//							frag1[idx] = gw.word[idx];
+//						}
+//						
+//						GridWord gw2 = new GridWord(frag1, GridValidity.FRAGMENTED);
+//						populateWord(gw2, true, allowReplacements);
+//						gw.countFragments++;
+//						gw.falseWords.add(gw2);
+//					});
+//				}
 			} else {
 				System.err.println("Not populated: "+ printWord(gw.word));
 			}
@@ -611,7 +650,7 @@ public class WordSearch1  {
 		System.out.println();
 	}
 
-	public void printGrid4() {
+	public void printGrid41() {
 		System.out.println("Grid occupancy: " + getGridOccupancy() + "  :: Valid: " + getGridOccupancy(true));
 		System.out.println();
 		for(int idx=0; idx<this.GRID_WIDTH; idx++) {
@@ -633,9 +672,53 @@ public class WordSearch1  {
 		printGrid5();
 	}
 
+	public void printGrid4() {
+		System.out.println("GRID: " + GRID_ID);
+		
+		//System.out.println("Grid occupancy: " + getGridOccupancy() + "  :: Valid: " + getGridOccupancy(true));
+		System.out.println();
+		for(int idx=0; idx<this.GRID_WIDTH; idx++) {
+			List<String> list1 = Arrays.stream(WordSearch1.GRID_ITEMS[idx])
+					.filter((o1) -> o1 != null)
+					.map((item) -> {
+						boolean startWord = false;
+						boolean endWord = false;
+						for(WordLetter wordLetter : item.listWL) {
+							if (!wordLetter.gw.isValid()) continue;
+//							
+							startWord = startWord || wordLetter.start;
+							endWord = endWord || wordLetter.end;
+						}
+						String retVal = item.letter;
+						if(startWord) {
+							retVal = "."+retVal;
+						}
+						if(endWord) {
+							retVal = retVal + ".";
+						}
+						return retVal;
+					})
+					.collect(Collectors.toList());
+			
+			for(int jdx=0; jdx<GRID_LENGTH; jdx++) {
+				System.out.print((list1.get(jdx)=="-"?" ":list1.get(jdx)) + "\t");
+				//temp1++;
+			}
+			System.out.println();
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println();
+		//printGrid5();
+	}
 
 	public void printGrid5() {
-		System.out.println("Grid occupancy: " + getGridOccupancy() + "  :: Valid: " + getGridOccupancy(true));
+		System.out.println();
+		System.out.println();
+		System.out.println("GRID: " + GRID_ID);
+		System.out.println();
+
+		//System.out.println("Grid occupancy: " + getGridOccupancy() + "  :: Valid: " + getGridOccupancy(true));
 		System.out.print((new String(Character.toChars(EX_DEC[0]))));
 		System.out.print((new String(Character.toChars(EX_DEC[1])))+(new String(Character.toChars(EX_DEC[1]))));
 		for(int jdx=0; jdx<GRID_LENGTH; jdx++) {
