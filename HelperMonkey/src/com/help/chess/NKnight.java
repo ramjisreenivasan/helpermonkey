@@ -9,40 +9,38 @@ import javax.swing.JPanel;
 public class NKnight extends JPanel {
 	static final int N = 7;
 	static final int COUNT = 25;
-	
+
 	static final int CELL_SIZE = 50; // Size of each cell in pixels
 
 	static int[][] board;
 
 	private void resetBoardCell(int idx, int jdx) {
-		for (int j=jdx; j < N; j++) board[idx][j] = 0;
-		
-		for (int i = idx+1; i < N; i++)
-			for (int j = 0; j < N; j++)
-				board[i][j] = 0;
+		board[idx][jdx] = 0;
 	}
-	
+
 	private void resetFromNext(int idx, int jdx) {
-		for (int i=idx; i < N; i++) board[i][jdx] = 0;
-		
-		for (int i = idx+1; i < N; i++)
+		for (int i = idx; i < N; i++)
+			board[i][jdx] = 0;
+
+		for (int i = idx + 1; i < N; i++)
 			for (int j = 0; j < N; j++)
 				board[i][j] = 0;
 	}
-	
+
 	private int getSafeCount() {
-		int cnt =0;
+		int cnt = 0;
 		for (int i = 0; i < N; i++)
 			for (int j = 0; j < N; j++)
-				if (board[i][j] == 1) cnt++;
-		
-		if(cnt > 21) {
+				if (board[i][j] == 1)
+					cnt++;
+
+		if (cnt > 21) {
 			System.out.println("Safe Count :: " + cnt);
 		}
-		
+
 		return cnt;
 	}
-	
+
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		drawBoard(g);
@@ -143,16 +141,14 @@ public class NKnight extends JPanel {
 	}
 
 	/* A recursive utility function to solve N Knights problem */
-	int solveNKUtil(int n, int row, int col) {
-		int nextRow = row;
-		int nextCol = col;
+	int solveNKUtil(int n, int nextRow, int nextCol) {
 
 		for (int i = 0; i < n;) {
 			// System.out.println("Solved:: " + i);
 
 			int prevNC = nextCol;
 			int prevNR = nextRow;
-			
+
 			board[nextRow][nextCol] = -1;
 			repaint();
 			printSolution(board);
@@ -173,45 +169,32 @@ public class NKnight extends JPanel {
 					nextRow++;
 
 					if (nextRow >= N) {
-						// System.out.println("MAX Solved");
-						resetBoardCell(prevNR,prevNC);
-						i--;
-						repaint();
-						printSolution(board);
-						return -2;
+						return -1;
 					}
 				}
 
 				int retVal = solveNKUtil(n, nextRow, nextCol);
-				if(retVal == 1) {
+				if (retVal == 1) {
 					return 1;
 				} else if (retVal < 0) {
-					//board[nextRow][nextCol] = 0;
-					resetBoardCell(prevNR,prevNC);
-					repaint();
-					printSolution(board);
-					
 					nextCol--;
-					if(nextCol < 0) {
-						nextCol = N-1;
+					if (nextCol < 0) {
+						nextCol = N - 1;
 						nextRow--;
-						
-						if(nextRow < 0) {
+
+						if (nextRow < 0) {
 							System.out.println("!!!!!! ROW out of bounds !!!!!");
 							return 0;
 						}
 					}
-					//return 0;
 				}
 
-				//board[nextRow][nextCol] = 0;
-				resetBoardCell(nextRow,nextCol);
+				resetBoardCell(nextRow, nextCol);
 				repaint();
 				printSolution(board);
 				i--;
 			} else {
-				//board[nextRow][nextCol] = 0;
-				resetBoardCell(nextRow,nextCol);
+				resetBoardCell(nextRow, nextCol);
 				repaint();
 				printSolution(board);
 			}
@@ -223,17 +206,12 @@ public class NKnight extends JPanel {
 				nextRow++;
 
 				if (nextRow >= N) {
-					// System.out.println("MAX Solved");
-					//board[prevNR][prevNC] = 0;
-					resetBoardCell(prevNR,prevNC);
-					repaint();
-					printSolution(board);
 					return -1;
 				}
 			}
 
 		}
-		
+
 		return 0;
 	}
 
